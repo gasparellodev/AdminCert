@@ -6,7 +6,7 @@ const users = [
   {
     id: '5e86809283e28b96d2d38537',
     avatar: '',
-    email: 'demo@devias.io',
+    email: 'vinygasparello@gmail.com',
     name: 'Vinicius Henrique Santos',
     password: 'x2k2p4h3',
   }

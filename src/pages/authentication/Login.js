@@ -30,7 +30,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | Material Kit Pro</title>
+        <title>AdminCerti | Login</title>
       </Helmet>
       <Box
         sx={{
@@ -83,13 +83,13 @@ const Login = () => {
                     gutterBottom
                     variant="h4"
                   >
-                    Log in
+                    AdminCert
                   </Typography>
                   <Typography
                     color="textSecondary"
                     variant="body2"
                   >
-                    Log in on the internal platform
+                    Controle suas certidões com facilidade
                   </Typography>
                 </div>
                 <Box
@@ -125,7 +125,7 @@ const Login = () => {
                 to="/authentication/register"
                 variant="body2"
               >
-                Create new account
+                Cadastrar novo usuário
               </Link>
               {platform === 'Amplify' && (
                 <Link

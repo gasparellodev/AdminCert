@@ -104,7 +104,7 @@ const OrderListTable = (props) => {
           sx={{
             m: 1,
             maxWidth: '100%',
-            width: 500
+            width: 1050
           }}
         >
           <TextField
@@ -129,75 +129,19 @@ const OrderListTable = (props) => {
                     key={order.id}
                     selected={selectedOrders.indexOf(order.id) !== -1}
                   >
-                    <TableCell>
-                      <Link
-                        color="textPrimary"
-                        component={RouterLink}
-                        to="/dashboard/orders/1"
-                        underline="none"
-                        variant="subtitle2"
-                      >
-                        {order.number}
-                      </Link>
-                      <Typography
-                        color="textSecondary"
-                        variant="body2"
-                      >
-                        {format(order.createdAt, 'dd MMM yyyy | HH:mm')}
-                      </Typography>
-                    </TableCell>
-                    <TableCell>
-                      <Typography
-                        color="textPrimary"
-                        variant="subtitle2"
-                      >
-                        {order.customer.name}
-                      </Typography>
-                      <Typography
-                        color="textSecondary"
-                        variant="body2"
-                      >
-                        {order.customer.email}
-                      </Typography>
-                    </TableCell>
-                    <TableCell>
-                      {order.paymentMethod}
-                    </TableCell>
-                    <TableCell>
-                      {order.totalAmount}
-                    </TableCell>
-                    <TableCell>
-                      {getStatusLabel(order.status)}
-                    </TableCell>
-                    <TableCell align="right">
-                      <IconButton>
-                        <PencilAltIcon fontSize="small" />
-                      </IconButton>
-                      <IconButton
-                        component={RouterLink}
-                        to="/dashboard/orders/1"
-                      >
-                        <ArrowRightIcon fontSize="small" />
-                      </IconButton>
-                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </Box>
         </Scrollbar>
-        <TablePagination
-          component="div"
-          count={orders.length}
-          onPageChange={handlePageChange}
-          onRowsPerPageChange={handleLimitChange}
-          page={page}
-          rowsPerPage={limit}
-          rowsPerPageOptions={[5, 10, 25]}
-        />
       </Card>
 
+  
+
       {/* TABELA CARTÓRIOSC  */}
+
+      
       <Card sx={{ mt: 2 }}>
         <CardHeader
           action={<MoreMenu />}

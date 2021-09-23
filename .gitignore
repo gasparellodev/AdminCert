@@ -104,3 +104,6 @@ dist
 .tern-port
 package.json
 yarn.lock
+
+# Local Netlify folder
+.netlify

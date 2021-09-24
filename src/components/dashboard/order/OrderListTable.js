@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { format } from 'date-fns';
 import PropTypes from 'prop-types';
@@ -27,6 +27,7 @@ import MoreMenu from '../../MoreMenu';
 import Scrollbar from '../../Scrollbar';
 import SearchIcon from '../../../icons/Search';
 import OrderListBulkActions from './OrderListBulkActions';
+import {fetchStates} from '../../helpers/ibge';
 
 const getStatusLabel = (paymentStatus) => {
   const map = {
@@ -92,6 +93,15 @@ const OrderListTable = (props) => {
   const enableBulkActions = selectedOrders.length > 0;
   const selectedSomeOrders = selectedOrders.length > 0 && selectedOrders.length < orders.length;
   const selectedAllOrders = selectedOrders.length === orders.length;
+  
+  const States = () => {
+  }
+  const [states, setStates] = useState();
+  useEffect(() => {
+    fetchStates().then((states) => {
+      setStates(states); 
+    });
+  }, []);
 
   return (
     <>
@@ -104,37 +114,49 @@ const OrderListTable = (props) => {
           sx={{
             m: 1,
             maxWidth: '100%',
-            width: 1050
+            width: 700,
+            float: 'left',
           }}
         >
           <TextField
-            fullWidth
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon fontSize="small" />
-                </InputAdornment>
-              )
-            }}
-          />
+          fullWidth
+          label="Estado"
+          name="estado"
+          select
+          SelectProps={{ native: true }}
+          variant="outlined"
+        >
+          {states.map((state) => {
+            const {sigla, nome} = state;
+            
+                <option 
+                key={sigla}
+                value={sigla}
+                >
+                  {nome}
+                </option>
+          })}
+        </TextField>
         </Box>
-        <Divider />
-        <Scrollbar>
-          <Box sx={{ minWidth: 1150 }}>
-            <Table>
-              <TableBody>
-                {paginatedOrders.map((order) => (
-                  <TableRow
-                    hover
-                    key={order.id}
-                    selected={selectedOrders.indexOf(order.id) !== -1}
-                  >
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Box>
-        </Scrollbar>
+        <Box
+          sx={{
+            m: 1,
+            maxWidth: '100%',
+            width: 750,
+            float: 'right',
+          }}
+        >
+            <TextField
+          fullWidth
+          label="Cidade"
+          name="category"
+          select
+          SelectProps={{ native: true }}
+          variant="outlined"
+        >
+        
+        </TextField>
+        </Box>
       </Card>
 
   

@@ -56,6 +56,7 @@ const OrderDetails = Loadable(lazy(() => import('./pages/dashboard/OrderDetails'
 const OrderList = Loadable(lazy(() => import('./pages/dashboard/OrderList')));
 const Overview = Loadable(lazy(() => import('./pages/dashboard/Overview')));
 const ProductCreate = Loadable(lazy(() => import('./pages/dashboard/ProductCreate')));
+const VariationCreate = Loadable(lazy(() => import('./pages/dashboard/VariationCreate')));
 const ProductList = Loadable(lazy(() => import('./pages/dashboard/ProductList')));
 
 // Docs pages
@@ -264,6 +265,10 @@ const routes = [
           {
             path: 'new',
             element: <ProductCreate />
+          },
+          {
+            path: 'variations',
+            element: <VariationCreate />
           }
         ]
       },

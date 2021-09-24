@@ -81,7 +81,7 @@ const sections = [
           },
           {
             title: 'Variações',
-            path: '/dashboard/orders/1'
+            path: '/dashboard/products/variations'
           }
         ]
       },

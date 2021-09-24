@@ -10,10 +10,10 @@ import { Provider as ReduxProvider } from 'react-redux';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
 import StyledEngineProvider from '@material-ui/core/StyledEngineProvider';
-import App from './src/App';
-import { AuthProvider } from './src/contexts/JWTContext';
-import { SettingsProvider } from './src/contexts/SettingsContext';
-import store from './src/store';
+import App from './App';
+import { AuthProvider } from './contexts/JWTContext';
+import { SettingsProvider } from './contexts/SettingsContext';
+import store from './store';
 
 ReactDOM.render(
   <StrictMode>

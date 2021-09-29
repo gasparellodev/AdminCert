@@ -126,7 +126,7 @@ const OrderListTable = (props) => {
           SelectProps={{ native: true }}
           variant="outlined"
         >
-          {states.map((state) => {
+          {/*{states.map((state) => {
             const {sigla, nome} = state;
             
                 <option 
@@ -135,7 +135,7 @@ const OrderListTable = (props) => {
                 >
                   {nome}
                 </option>
-          })}
+          })}*/}
         </TextField>
         </Box>
         <Box
